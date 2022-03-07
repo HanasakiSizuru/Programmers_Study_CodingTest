@@ -1,31 +1,14 @@
 def solution(lottos, win_nums):
-    answer = [0,0]
-    correct = [0,0]
+    answer = 0
+    rank = [6,6,5,4,3,2,1]
+    cnt0 = lottos.count(0)
+    
     for lotto in lottos:
-        if lotto == 0:
-            correct[0] += 1
-        else :
-            for wnum in win_nums:
-                if lotto == wnum:
-                    correct[0] += 1
-                    correct[1] += 1
-    pos = 0
-    for cnum in correct:
-        if cnum == 2:
-            answer[pos] = 5
-        elif cnum == 3:
-            answer[pos] = 4
-        elif cnum == 4:
-            answer[pos] = 3
-        elif cnum == 5:
-            answer[pos] = 2
-        elif cnum == 6:
-            answer[pos] = 1
-        else:
-            answer[pos] = 6
-        pos += 1
+        if lotto in win_nums:
+            answer += 1
 
-    return answer
+            
+    return rank[answer+cnt0], rank[answer]
 
 def main():
     #예시1
