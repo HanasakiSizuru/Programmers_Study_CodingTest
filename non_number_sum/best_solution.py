@@ -1,4 +1,4 @@
-def solution(nnumbers):
+def solution(numbers):
     return 45 - sum(numbers)
 
 def main():
