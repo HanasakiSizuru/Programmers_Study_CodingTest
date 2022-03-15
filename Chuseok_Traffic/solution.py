@@ -1,10 +1,11 @@
 def solution(lines):
-    time_list = [["" for _ in range(2)] for _ in range(lines.length())]
+
+    time_list = [["" for _ in range(2)] for _ in range(len(lines))]
     lcnt = 0
     for line in lines:
         sline = line.split()
-        sline[2][sline.find('s')] = ''
-        time_list[lcnt][0] = sline[1] - sline[2]
+        sline[2].replace('s','')
+        
         lcnt += 1
         
     answer = 0
@@ -15,13 +16,13 @@ def main():
         "2016-09-15 01:00:04.001 2.0s",
         "2016-09-15 01:00:07.000 2s"
         ]
-    solution(lines)
+    print(solution(lines))
     
     lines = [
         "2016-09-15 01:00:04.002 2.0s",
         "2016-09-15 01:00:07.000 2s"
         ]
-    solution(lines)
+    print(solution(lines))
 
     lines = [
         "2016-09-15 20:59:57.421 0.351s",
@@ -35,6 +36,6 @@ def main():
         "2016-09-15 21:00:00.966 0.381s",
         "2016-09-15 21:00:02.066 2.62s"
         ]
-    solution(lines)
+    print(solution(lines))
 
 main()
