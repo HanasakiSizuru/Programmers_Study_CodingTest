@@ -6,11 +6,11 @@ def solution(new_id):
     new_id.lower()
     
     # 2.지정된 문자 외 제거
-    for i in range(new_id.length()):
-        if new_id[i] not in allow:
-            new_id[i] = ''
+    
     
     # 3. '.'이 여러개면 하나만 표시
+    while((new_id.find('..'))!=-1):
+        new_id.replace('..','.')
     
     # 4. 처음과 끝이 '.'이면 제거
     if new_id.startswith('.'):
@@ -28,3 +28,9 @@ def solution(new_id):
         new_id[length:4] = new_id[-1]
         
     return new_id
+
+def main():
+    new_id = "...!@BaT#*..y.abcdefghijklm"
+    print(solution(new_id))
+
+main()
